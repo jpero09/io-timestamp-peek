@@ -9,11 +9,6 @@ append header-title
 append header-stylesheets
   style.
     .right .github-fork-ribbon { background-color: #333; }
-    .timeStampPeek {background-color:red;}
-    .timeStampPeek .flipper {background-color:green;}
-    .timeStampPeek .flipper .rawValue {background-color:blue;}
-    .timeStampPeek .flipper .momentValue {background-color:yellow;}
-
 append body-ng-controller
   - controller_name = 'TimeStamp_Controller as tsc';
 
@@ -26,10 +21,32 @@ append body-content
       table.table.table-bordered
         thead
           tr.bolder
-            td Raw Date
-            td Directive
+            td Value
+            td Timepeek
         tbody
           tr(data-ng-repeat='date in tsc.sampleData')
-            td.width-60 {{::date | date:'medium'}}
+            td.width-60 {{::date}}
             td.width-60
               iotimestamppeek(value="date")
+          tr
+            td.width-60 Custom Error Label
+            td.width-60
+              iotimestamppeek(value="gibberish", invalidlabel="Stop that right meow")
+  .row
+    .col-md-12
+      h3 Usage:
+      pre.code
+        | &lt;iotimestamppeek value="date"/>
+      h4 Attributes:
+      table.table.table-bordered
+        thead
+          tr.bolder
+            td Attribute
+            td Value
+        tbody
+          tr
+            td.width-60 value
+            td.width-60 Required. The js Date parsable value to display
+          tr
+            td.width-60 invalidlabel
+            td.width-60 Optional. Defaults to moments current locale 'Invalid Date' message. Only displayed if an invalid 'value' is used.
