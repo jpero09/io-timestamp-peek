@@ -1,0 +1,22 @@
+{
+  "name": "io-timestamp-peek",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jpero09/io-timestamp-peek",
+  "authors": [
+    "Jason Pero <jpero09@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.1",
+    "md5-jkmyers": "~0.0.1",
+    "github-fork-ribbon-css": "~0.1.1"
+  }
+}

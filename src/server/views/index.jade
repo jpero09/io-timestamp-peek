@@ -1,0 +1,35 @@
+extends _layouts/master
+
+append header-meta
+  base(href='/')
+
+append header-title
+  | IO TimeStamp-Peek
+
+append header-stylesheets
+  style.
+    .right .github-fork-ribbon { background-color: #333; }
+    .timeStampPeek {background-color:red;}
+    .timeStampPeek .flipper {background-color:green;}
+    .timeStampPeek .flipper .rawValue {background-color:blue;}
+    .timeStampPeek .flipper .momentValue {background-color:yellow;}
+
+append body-ng-controller
+  - controller_name = 'TimeStamp_Controller as tsc';
+
+append body-title
+  h4 Angular Directive to show timestamp on hover
+
+append body-content
+  .row
+    .col-md-12
+      table.table.table-bordered
+        thead
+          tr.bolder
+            td Raw Date
+            td Directive
+        tbody
+          tr(data-ng-repeat='date in tsc.sampleData')
+            td.width-60 {{::date | date:'medium'}}
+            td.width-60
+              iotimestamppeek(value="date")
