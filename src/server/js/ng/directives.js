@@ -16,7 +16,6 @@
     };
 
     function linkFn(scope, element, attrs){
-      scope.lValue = null;
       scope.$watch('value', function onDateChange(newVal){
         if(!newVal) return;
         var cleanVal = moment(newVal);

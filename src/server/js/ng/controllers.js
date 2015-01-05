@@ -14,9 +14,5 @@
       new Date(2015,0,1),
       new Date(1999, 11, 31)
     ];
-
-    vm.getMoment = function(date){
-      return moment(date).fromNow();
-    };
   }
 })();
