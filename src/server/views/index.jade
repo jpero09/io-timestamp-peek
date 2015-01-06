@@ -31,7 +31,15 @@ append body-content
           tr
             td.width-60 Custom Error Label
             td.width-60
-              iotimestamppeek(value="gibberish", invalidlabel="Stop that right meow")
+              iotimestamppeek(value="gibberish", invalid-label="Stop that right meow")
+          tr
+            td.width-60 Exact View
+            td.width-60
+              iotimestamppeek(value="1420564747992", default-view='exact')
+          tr
+            td.width-60 Formatted Exact Date
+            td.width-60
+              iotimestamppeek(value="1220618447614", default-view='exact', format='MM/DD/YYYY')
   .row
     .col-md-12
       h3 Usage:
@@ -42,11 +50,22 @@ append body-content
         thead
           tr.bolder
             td Attribute
+            td Required
             td Value
         tbody
           tr
-            td.width-60 value
-            td.width-60 Required. The js Date parsable value to display
+            td value
+            td.width-60 true
+            td The js Date parsable value to display
           tr
-            td.width-60 invalidlabel
-            td.width-60 Optional. Defaults to moments current locale 'Invalid Date' message. Only displayed if an invalid 'value' is used.
+            td invalid-label
+            td.width-60 false
+            td Defaults to moments current locale 'Invalid Date' message. Only displayed if an invalid 'value' is used.
+          tr
+            td default-view
+            td.width-60 false
+            td [<i>relative</i> | exact] Set to 'exact' to show the exact time first
+          tr
+            td format
+            td.width-60 false
+            td The format to use onthe exact date. (ex/ 'MM/DD/YYYY')
